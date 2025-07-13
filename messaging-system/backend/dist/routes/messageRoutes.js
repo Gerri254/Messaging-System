@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const messageController_1 = require("../controllers/messageController");
+const auth_1 = require("../middleware/auth");
+const validation_1 = require("../middleware/validation");
+const validation_2 = require("../utils/validation");
+const router = (0, express_1.Router)();
+router.use(auth_1.authenticate);
+router.get('/', messageController_1.messageController.getMessages);
+router.post('/send', (0, validation_1.validate)(validation_2.messageValidation.send), messageController_1.messageController.sendMessage);
+router.post('/bulk-send', (0, validation_1.validate)(validation_2.messageValidation.bulkSend), messageController_1.messageController.bulkSendMessage);
+router.get('/history', messageController_1.messageController.getMessageHistory);
+router.post('/validate-phone', (0, validation_1.validate)(validation_2.messageValidation.validatePhone), messageController_1.messageController.validatePhoneNumber);
+router.get('/sms/usage-stats', messageController_1.messageController.getSMSUsageStats);
+router.get('/:id', messageController_1.messageController.getMessageById);
+router.get('/:id/status', messageController_1.messageController.getMessageStatus);
+router.delete('/:id', messageController_1.messageController.cancelMessage);
+exports.default = router;
+//# sourceMappingURL=messageRoutes.js.map

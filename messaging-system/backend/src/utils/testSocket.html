@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Test Client</title>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .connected { background-color: #d4edda; color: #155724; }
+        .disconnected { background-color: #f8d7da; color: #721c24; }
+        .message {
+            background-color: #e7f3ff;
+            border: 1px solid #bee5eb;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        #messages {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Socket.io Real-time Messaging Test</h1>
+    
+    <div class="container">
+        <h2>Connection Status</h2>
+        <div id="connectionStatus" class="status disconnected">Disconnected</div>
+        
+        <h3>Authentication</h3>
+        <input type="text" id="authToken" placeholder="Enter JWT token here">
+        <button onclick="connect()">Connect</button>
+        <button onclick="disconnect()">Disconnect</button>
+    </div>
+
+    <div class="container">
+        <h2>Test Actions</h2>
+        <button onclick="joinRoom()">Join User Room</button>
+        <button onclick="subscribeAnalytics()">Subscribe to Analytics</button>
+        <button onclick="trackMessage()">Track Message</button>
+        <button onclick="sendPing()">Send Ping</button>
+    </div>
+
+    <div class="container">
+        <h2>Send Test Message</h2>
+        <input type="text" id="testTitle" placeholder="Notification title" value="Test Notification">
+        <textarea id="testMessage" placeholder="Notification message">This is a test notification from the Socket.io client</textarea>
+        <button onclick="sendTestNotification()">Send Test Notification</button>
+    </div>
+
+    <div class="container">
+        <h2>Real-time Messages</h2>
+        <div id="messages"></div>
+        <button onclick="clearMessages()">Clear Messages</button>
+    </div>
+
+    <script>
+        let socket = null;
+        let userId = null;
+
+        function addMessage(type, data) {
+            const messages = document.getElementById('messages');
+            const message = document.createElement('div');
+            message.className = 'message';
+            message.innerHTML = `
+                <strong>${type}</strong> - ${new Date().toLocaleTimeString()}<br>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+            messages.appendChild(message);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function updateConnectionStatus(connected) {
+            const status = document.getElementById('connectionStatus');
+            if (connected) {
+                status.textContent = 'Connected';
+                status.className = 'status connected';
+            } else {
+                status.textContent = 'Disconnected';
+                status.className = 'status disconnected';
+            }
+        }
+
+        function connect() {
+            const token = document.getElementById('authToken').value;
+            if (!token) {
+                alert('Please enter a JWT token');
+                return;
+            }
+
+            if (socket) {
+                socket.disconnect();
+            }
+
+            socket = io('http://localhost:5000', {
+                auth: {
+                    token: token
+                }
+            });
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                updateConnectionStatus(true);
+                addMessage('SYSTEM', { message: 'Connected to server', socketId: socket.id });
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server');
+                updateConnectionStatus(false);
+                addMessage('SYSTEM', { message: 'Disconnected from server' });
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('Connection error:', error);
+                addMessage('ERROR', { message: 'Connection error', error: error.message });
+            });
+
+            // Listen for real-time events
+            socket.on('notification', (data) => {
+                addMessage('NOTIFICATION', data);
+            });
+
+            socket.on('message_update', (data) => {
+                addMessage('MESSAGE_UPDATE', data);
+            });
+
+            socket.on('recipient_update', (data) => {
+                addMessage('RECIPIENT_UPDATE', data);
+            });
+
+            socket.on('analytics_update', (data) => {
+                addMessage('ANALYTICS_UPDATE', data);
+            });
+
+            socket.on('ping', (data) => {
+                addMessage('PING', data);
+                // Send pong back
+                socket.emit('pong', { timestamp: new Date().toISOString() });
+            });
+        }
+
+        function disconnect() {
+            if (socket) {
+                socket.disconnect();
+                socket = null;
+            }
+        }
+
+        function joinRoom() {
+            if (!socket || !socket.connected) {
+                alert('Please connect first');
+                return;
+            }
+
+            const roomId = prompt('Enter room ID (e.g., user_123):');
+            if (roomId) {
+                socket.emit('join_room', roomId);
+                addMessage('ACTION', { message: `Joined room: ${roomId}` });
+            }
+        }
+
+        function subscribeAnalytics() {
+            if (!socket || !socket.connected) {
+                alert('Please connect first');
+                return;
+            }
+
+            socket.emit('subscribe_analytics');
+            addMessage('ACTION', { message: 'Subscribed to analytics updates' });
+        }
+
+        function trackMessage() {
+            if (!socket || !socket.connected) {
+                alert('Please connect first');
+                return;
+            }
+
+            const messageId = prompt('Enter message ID to track:');
+            if (messageId) {
+                socket.emit('track_message', messageId);
+                addMessage('ACTION', { message: `Tracking message: ${messageId}` });
+            }
+        }
+
+        function sendPing() {
+            if (!socket || !socket.connected) {
+                alert('Please connect first');
+                return;
+            }
+
+            addMessage('ACTION', { message: 'Ping sent', timestamp: new Date().toISOString() });
+        }
+
+        function sendTestNotification() {
+            if (!socket || !socket.connected) {
+                alert('Please connect first');
+                return;
+            }
+
+            const title = document.getElementById('testTitle').value;
+            const message = document.getElementById('testMessage').value;
+
+            if (!title || !message) {
+                alert('Please enter title and message');
+                return;
+            }
+
+            // This would typically be done via REST API
+            addMessage('ACTION', { 
+                message: 'Test notification would be sent via API', 
+                title, 
+                content: message 
+            });
+        }
+
+        function clearMessages() {
+            document.getElementById('messages').innerHTML = '';
+        }
+
+        // Auto-scroll to bottom when new messages arrive
+        const observer = new MutationObserver(() => {
+            const messages = document.getElementById('messages');
+            messages.scrollTop = messages.scrollHeight;
+        });
+
+        observer.observe(document.getElementById('messages'), {
+            childList: true
+        });
+    </script>
+</body>
+</html>

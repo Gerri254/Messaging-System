@@ -24,7 +24,12 @@
       "Bash(ping:*)",
       "Bash(sudo iptables:*)",
       "Bash(npx prisma:*)",
-      "Bash(kill:*)"
+      "Bash(kill:*)",
+      "Bash(cp:*)",
+      "Bash(true)",
+      "Bash(timeout 10 npm start)",
+      "Bash(timeout 15 npm run build)",
+      "Bash(npm test)"
     ],
     "deny": []
   }

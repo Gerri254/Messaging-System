@@ -18,10 +18,9 @@ const templateRoutes_1 = __importDefault(require("./routes/templateRoutes"));
 const analyticsRoutes_1 = __importDefault(require("./routes/analyticsRoutes"));
 const socketRoutes_1 = __importDefault(require("./routes/socketRoutes"));
 const socketService_1 = require("./services/socketService");
-const performance_1 = require("./middleware/performance");
 const database_1 = require("./config/database");
 const security_1 = require("./middleware/security");
-const performance_2 = require("./middleware/performance");
+const performance_1 = require("./middleware/performance");
 const app = (0, express_1.default)();
 exports.app = app;
 const server = (0, http_1.createServer)(app);
@@ -37,13 +36,13 @@ app.use((0, cors_1.default)(security_1.corsOptions));
 app.use(security_1.requestSizeLimit);
 app.use(security_1.sanitizeInput);
 app.use(security_1.securityLogger);
-app.use(performance_2.requestTiming);
-app.use(performance_2.responseCompression);
-app.use(performance_2.memoryMonitor);
-app.use(performance_2.requestDeduplication);
+app.use(performance_1.requestTiming);
+app.use(performance_1.responseCompression);
+app.use(performance_1.memoryMonitor);
+app.use(performance_1.requestDeduplication);
 app.use(express_1.default.json({ limit: '10mb' }));
 app.use(express_1.default.urlencoded({ extended: true, limit: '10mb' }));
-app.get('/health', performance_2.healthCheck);
+app.get('/health', performance_1.healthCheck);
 app.use('/api/auth', security_1.authRateLimit);
 app.use('/api/messages/send', security_1.smsRateLimit);
 app.use('/api', security_1.apiRateLimit);
@@ -77,12 +76,15 @@ app.use((error, req, res, next) => {
     });
 });
 const PORT = config_1.default.port;
-server.listen(PORT, () => {
+app.locals.prisma = database_1.prisma;
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
     console.log(`Environment: ${config_1.default.nodeEnv}`);
     console.log(`Health check: http://localhost:${PORT}/health`);
-    (0, performance_1.gracefulShutdown)(server, database_1.prisma);
 });
-app.locals.prisma = database_1.prisma;
+server.on('error', (error) => {
+    console.error('Server error:', error);
+    process.exit(1);
+});
 exports.default = server;
 //# sourceMappingURL=app.js.map

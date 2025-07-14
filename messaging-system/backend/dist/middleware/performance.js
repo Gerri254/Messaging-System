@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.healthCheck = exports.gracefulShutdown = exports.staticFileOptimization = exports.addDatabaseOptimizations = exports.requestDeduplication = exports.memoryMonitor = exports.cacheControl = exports.optimizeDatabaseConnections = exports.responseCompression = exports.requestTiming = void 0;
 const compression_1 = __importDefault(require("compression"));
-require("../types/express");
 const requestTiming = (req, res, next) => {
     const startTime = process.hrtime.bigint();
     res.on('finish', () => {

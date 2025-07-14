@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { User } from '@prisma/client';
-import '../types/express';
 export interface AuthRequest extends Request {
     user?: User;
 }

@@ -1,7 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import compression from 'compression';
 import { PrismaClient } from '@prisma/client';
-import '../types/express';
+import { User } from '@prisma/client';
+
+// Extend Request interface for this file
+interface RequestWithUser extends Request {
+  user?: User;
+}
 
 // Request timing middleware
 export const requestTiming = (req: Request, res: Response, next: NextFunction) => {
@@ -104,7 +109,7 @@ interface PendingRequest {
 
 const pendingRequests = new Map<string, PendingRequest>();
 
-export const requestDeduplication = (req: Request, res: Response, next: NextFunction) => {
+export const requestDeduplication = (req: RequestWithUser, res: Response, next: NextFunction) => {
   // Only deduplicate GET requests
   if (req.method !== 'GET') {
     return next();

@@ -7,7 +7,6 @@ exports.sessionSecurity = exports.validatePasswordStrength = exports.corsOptions
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 const helmet_1 = __importDefault(require("helmet"));
 const config_1 = require("../config");
-require("../types/express");
 exports.authRateLimit = (0, express_rate_limit_1.default)({
     windowMs: 15 * 60 * 1000,
     max: 5,
@@ -102,7 +101,11 @@ const sanitizeInput = (req, res, next) => {
         req.body = sanitizeObject(req.body);
     }
     if (req.query) {
-        req.query = sanitizeObject(req.query);
+        const sanitizedQuery = sanitizeObject(req.query);
+        Object.keys(req.query).forEach(key => {
+            delete req.query[key];
+        });
+        Object.assign(req.query, sanitizedQuery);
     }
     if (req.params) {
         req.params = sanitizeObject(req.params);
@@ -188,19 +191,48 @@ exports.corsOptions = {
         if (!origin)
             return callback(null, true);
         const allowedOrigins = config_1.config.cors.allowedOrigins;
-        if (allowedOrigins.includes(origin)) {
+        if (config_1.config.nodeEnv === 'development') {
+            console.log('🌐 CORS request from origin:', origin);
+            console.log('🔍 Allowed origins:', allowedOrigins);
+        }
+        const isAllowed = allowedOrigins.some(allowedOrigin => {
+            if (allowedOrigin === origin)
+                return true;
+            if (config_1.config.nodeEnv === 'development' && allowedOrigin.includes('localhost')) {
+                return origin.includes('localhost');
+            }
+            if (origin.includes('vercel.app') && allowedOrigins.some(ao => ao.includes('vercel.app'))) {
+                return true;
+            }
+            if (origin.includes('railway.app') && allowedOrigins.some(ao => ao.includes('railway.app'))) {
+                return true;
+            }
+            return false;
+        });
+        if (isAllowed) {
             callback(null, true);
         }
         else {
             console.warn('🚫 CORS blocked request from origin:', origin);
+            console.warn('🔍 Allowed origins:', allowedOrigins);
             callback(new Error('Not allowed by CORS'));
         }
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['X-RateLimit-Limit', 'X-RateLimit-Remaining'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: [
+        'Content-Type',
+        'Authorization',
+        'X-Requested-With',
+        'Accept',
+        'Origin',
+        'Cache-Control',
+        'X-File-Name'
+    ],
+    exposedHeaders: ['X-RateLimit-Limit', 'X-RateLimit-Remaining', 'X-Total-Count'],
     maxAge: 86400,
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 };
 const validatePasswordStrength = (password) => {
     const errors = [];

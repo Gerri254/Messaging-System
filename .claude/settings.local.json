@@ -12,7 +12,19 @@
       "Bash(npx tailwindcss:*)",
       "Bash(npx prisma migrate dev:*)",
       "Bash(npm run test:run:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run dev:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(npm start)",
+      "Bash(PORT=3001 npm start)",
+      "Bash(rm:*)",
+      "Bash(node:*)",
+      "Bash(ping:*)",
+      "Bash(sudo iptables:*)",
+      "Bash(npx prisma:*)",
+      "Bash(kill:*)"
     ],
     "deny": []
   }

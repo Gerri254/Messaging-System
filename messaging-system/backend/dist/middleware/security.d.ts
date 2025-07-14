@@ -1,11 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
-import '../types/express';
+import { User } from '@prisma/client';
+interface RequestWithUser extends Request {
+    user?: User;
+}
 export declare const authRateLimit: import("express-rate-limit").RateLimitRequestHandler;
 export declare const apiRateLimit: import("express-rate-limit").RateLimitRequestHandler;
 export declare const smsRateLimit: import("express-rate-limit").RateLimitRequestHandler;
 export declare const securityHeaders: (req: import("http").IncomingMessage, res: import("http").ServerResponse, next: (err?: unknown) => void) => void;
 export declare const sanitizeInput: (req: Request, res: Response, next: NextFunction) => void;
-export declare const securityLogger: (req: Request, res: Response, next: NextFunction) => void;
+export declare const securityLogger: (req: RequestWithUser, res: Response, next: NextFunction) => void;
 export declare const requestSizeLimit: (req: Request, res: Response, next: NextFunction) => void | Response<any, Record<string, any>>;
 export declare const ipWhitelist: (allowedIPs: string[]) => (req: Request, res: Response, next: NextFunction) => void | Response<any, Record<string, any>>;
 export declare const corsOptions: {
@@ -15,6 +18,8 @@ export declare const corsOptions: {
     allowedHeaders: string[];
     exposedHeaders: string[];
     maxAge: number;
+    preflightContinue: boolean;
+    optionsSuccessStatus: number;
 };
 export declare const validatePasswordStrength: (password: string) => {
     isValid: boolean;
@@ -33,4 +38,5 @@ export declare const sessionSecurity: {
         sameSite: "strict";
     };
 };
+export {};
 //# sourceMappingURL=security.d.ts.map

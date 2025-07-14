@@ -2,7 +2,12 @@ import { Request, Response, NextFunction } from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import { config } from '../config';
-import '../types/express';
+import { User } from '@prisma/client';
+
+// Extend Request interface for this file
+interface RequestWithUser extends Request {
+  user?: User;
+}
 
 // Enhanced rate limiting with different limits for different endpoints
 export const authRateLimit = rateLimit({
@@ -43,7 +48,7 @@ export const smsRateLimit = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
-  keyGenerator: (req: Request) => {
+  keyGenerator: (req: RequestWithUser) => {
     // Use user ID for authenticated users, IP for others
     return req.user?.id || req.ip || 'unknown';
   },
@@ -114,7 +119,11 @@ export const sanitizeInput = (req: Request, res: Response, next: NextFunction) =
   }
   
   if (req.query) {
-    req.query = sanitizeObject(req.query);
+    const sanitizedQuery = sanitizeObject(req.query);
+    Object.keys(req.query).forEach(key => {
+      delete req.query[key];
+    });
+    Object.assign(req.query, sanitizedQuery);
   }
   
   if (req.params) {
@@ -125,7 +134,7 @@ export const sanitizeInput = (req: Request, res: Response, next: NextFunction) =
 };
 
 // Request logging for security monitoring
-export const securityLogger = (req: Request, res: Response, next: NextFunction) => {
+export const securityLogger = (req: RequestWithUser, res: Response, next: NextFunction) => {
   const startTime = Date.now();
   
   // Log suspicious patterns

@@ -111,17 +111,22 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
 
 const PORT = config.port;
 
-server.listen(PORT, () => {
+// Store prisma instance for health check
+app.locals.prisma = prisma;
+
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${config.nodeEnv}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   
   // Set up graceful shutdown
-  gracefulShutdown(server, prisma);
+  // gracefulShutdown(server, prisma);
 });
 
-// Store prisma instance for health check
-app.locals.prisma = prisma;
+server.on('error', (error: any) => {
+  console.error('Server error:', error);
+  process.exit(1);
+});
 
 export { app, io };
 export default server;

@@ -66,6 +66,24 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // Health check endpoint
 app.get('/health', healthCheck);
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Messaging System Backend',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      api: '/api',
+      auth: '/api/auth',
+      messages: '/api/messages',
+      contacts: '/api/contacts',
+      templates: '/api/templates',
+      analytics: '/api/analytics'
+    }
+  });
+});
+
 // Apply rate limiting with different limits for different endpoints
 app.use('/api/auth', authRateLimit);
 app.use('/api/messages/send', smsRateLimit);

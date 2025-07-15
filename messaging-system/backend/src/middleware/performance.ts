@@ -12,18 +12,25 @@ interface RequestWithUser extends Request {
 export const requestTiming = (req: Request, res: Response, next: NextFunction) => {
   const startTime = process.hrtime.bigint();
   
-  res.on('finish', () => {
+  // Override end method to add timing before headers are sent
+  const originalEnd = res.end.bind(res);
+  res.end = function(chunk?: any, encoding?: any, cb?: () => void): Response {
     const endTime = process.hrtime.bigint();
     const duration = Number(endTime - startTime) / 1000000; // Convert to milliseconds
     
-    // Add timing header
-    res.set('X-Response-Time', `${duration.toFixed(2)}ms`);
+    // Add timing header before response ends
+    if (!res.headersSent) {
+      res.set('X-Response-Time', `${duration.toFixed(2)}ms`);
+    }
     
     // Log slow requests
     if (duration > 1000) {
       console.warn(`🐌 Slow request: ${req.method} ${req.url} took ${duration.toFixed(2)}ms`);
     }
-  });
+    
+    // Call original end method and return the response
+    return originalEnd(chunk, encoding, cb);
+  };
   
   next();
 };

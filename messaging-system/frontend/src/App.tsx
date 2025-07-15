@@ -13,6 +13,7 @@ import VerifyEmailPage from './pages/auth/VerifyEmailPage';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import ContactsPage from './pages/contacts/ContactsPage';
 import MessagesPage from './pages/messages/MessagesPage';
+import SendMessagePage from './pages/messages/SendMessagePage';
 import TemplatesPage from './pages/templates/TemplatesPage';
 import AnalyticsPage from './pages/analytics/AnalyticsPage';
 import SettingsPage from './pages/settings/SettingsPage';
@@ -92,6 +93,7 @@ function App() {
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="contacts" element={<ContactsPage />} />
               <Route path="messages" element={<MessagesPage />} />
+              <Route path="messages/send" element={<SendMessagePage />} />
               <Route path="templates" element={<TemplatesPage />} />
               <Route path="analytics" element={<AnalyticsPage />} />
               <Route path="settings" element={<SettingsPage />} />

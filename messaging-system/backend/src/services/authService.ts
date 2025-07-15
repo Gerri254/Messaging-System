@@ -85,7 +85,8 @@ class AuthService {
       throw new Error('Invalid email or password');
     }
 
-    if (!user.isVerified) {
+    // Skip email verification in development mode
+    if (!user.isVerified && process.env.NODE_ENV === 'production') {
       throw new Error('Please verify your email address before logging in');
     }
 

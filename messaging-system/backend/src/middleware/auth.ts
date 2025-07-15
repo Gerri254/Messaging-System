@@ -37,7 +37,8 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
       });
     }
     
-    if (!user.isVerified) {
+    // Skip email verification in development mode
+    if (!user.isVerified && process.env.NODE_ENV === 'production') {
       return res.status(401).json({
         error: 'Please verify your email address to continue.',
       });

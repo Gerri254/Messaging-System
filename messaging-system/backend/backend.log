@@ -1,0 +1,976 @@
+
+> backend@1.0.0 dev
+> nodemon src/app.ts
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/app.ts`[39m
+[dotenv@17.2.0] injecting env (21) from .env (tip: ⚙️  enable debug logging with { debug: true })
+Socket.io service initialized
+Server running on port 8180
+Environment: development
+Health check: http://localhost:8180/health
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🐌 Slow request: GET /profile took 2228.87ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+🐌 Slow request: GET / took 2661.00ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET / took 1108.83ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DELETE FROM "public"."user_sessions" WHERE ("public"."user_sessions"."token" = $1 AND 1=1) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /logout took 1449.27ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."users" ("id","email","password","firstName","lastName","phone","isVerified","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING "public"."users"."id", "public"."users"."email", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."createdAt", "public"."users"."updatedAt"
+🐌 Slow request: POST /register took 4690.38ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."user_sessions" ("id","userId","token","expiresAt","createdAt") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET / took 1168.60ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🐌 Slow request: GET /profile took 1956.55ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET / took 3085.37ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET / took 1014.88ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🐌 Slow request: GET /profile took 2735.73ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DELETE FROM "public"."user_sessions" WHERE ("public"."user_sessions"."token" = $1 AND 1=1) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /logout took 1134.14ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🐌 Slow request: POST /login took 1290.07ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."user_sessions" ("id","userId","token","expiresAt","createdAt") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /login took 1397.38ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DELETE FROM "public"."user_sessions" WHERE ("public"."user_sessions"."token" = $1 AND 1=1) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /logout took 1013.74ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."user_sessions" ("id","userId","token","expiresAt","createdAt") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET /?limit=50 took 3393.24ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET /?limit=50 took 2476.80ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET /?limit=50 took 1530.43ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+🐌 Slow request: GET /?search=Piu&limit=50 took 1744.64ms
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+🐌 Slow request: GET /?search=Pi&limit=50 took 2302.07ms
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+🐌 Slow request: GET /?search=P&limit=50 took 3867.84ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) ORDER BY "public"."contacts"."createdAt" DESC LIMIT $6 OFFSET $7
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND ("public"."contacts"."name" ILIKE $2 OR "public"."contacts"."phone"::text LIKE $3 OR "public"."contacts"."email" ILIKE $4 OR "public"."contacts"."notes" ILIKE $5)) OFFSET $6) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."phone" = $2) LIMIT $3 OFFSET $4
+prisma:query INSERT INTO "public"."contacts" ("id","userId","name","phone","email","tags","customFields","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt"
+🐌 Slow request: POST / took 1784.70ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."contact_group_contacts"."id", "public"."contact_group_contacts"."contactId", "public"."contact_group_contacts"."contactGroupId" FROM "public"."contact_group_contacts" WHERE "public"."contact_group_contacts"."contactId" IN ($1) OFFSET $2
+🐌 Slow request: GET /?limit=50 took 2234.74ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contact_group_contacts"."id", "public"."contact_group_contacts"."contactId", "public"."contact_group_contacts"."contactGroupId" FROM "public"."contact_group_contacts" WHERE "public"."contact_group_contacts"."contactId" IN ($1) OFFSET $2
+🐌 Slow request: GET /?limit=50 took 1804.37ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query DELETE FROM "public"."user_sessions" WHERE ("public"."user_sessions"."token" = $1 AND 1=1) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /logout took 1144.76ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."users" ("id","email","password","firstName","lastName","phone","isVerified","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING "public"."users"."id", "public"."users"."email", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."createdAt", "public"."users"."updatedAt"
+🐌 Slow request: POST /register took 7469.76ms
+🐌 Slow request detected: {
+  ip: '127.0.0.1',
+  method: 'POST',
+  url: '/register',
+  duration: '7471ms',
+  status: 201,
+  userId: undefined
+}
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."user_sessions" ("id","userId","token","expiresAt","createdAt") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /login took 1944.46ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET /?limit=100 took 1065.92ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+🐌 Slow request: GET /?limit=100 took 1738.57ms
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET /?limit=50 took 1578.49ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation in
+/home/biggie/Desktop/Client-Server-Project/messaging-system/backend/src/middleware/auth.ts:30:36
+
+  27 
+  28 const decoded = verifyToken(token) as JwtPayload;
+  29 
+→ 30 const user = await prisma.user.findUnique(
+Can't reach database server at `ep-twilight-field-a2kibfch-pooler.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-twilight-field-a2kibfch-pooler.eu-central-1.aws.neon.tech:5432`.
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:error 
+Invalid `prisma.user.findUnique()` invocation in
+/home/biggie/Desktop/Client-Server-Project/messaging-system/backend/src/middleware/auth.ts:30:36
+
+  27 
+  28 const decoded = verifyToken(token) as JwtPayload;
+  29 
+→ 30 const user = await prisma.user.findUnique(
+Can't reach database server at `ep-twilight-field-a2kibfch-pooler.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-twilight-field-a2kibfch-pooler.eu-central-1.aws.neon.tech:5432`.
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query INSERT INTO "public"."user_sessions" ("id","userId","token","expiresAt","createdAt") VALUES ($1,$2,$3,$4,$5) RETURNING "public"."user_sessions"."id", "public"."user_sessions"."userId", "public"."user_sessions"."token", "public"."user_sessions"."userAgent", "public"."user_sessions"."ipAddress", "public"."user_sessions"."expiresAt", "public"."user_sessions"."createdAt"
+🐌 Slow request: POST /login took 3195.59ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET / took 2774.98ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET / took 1225.78ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+🐌 Slow request: GET /?limit=50 took 2656.15ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET /?limit=50 took 1217.58ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🐌 Slow request: GET / took 1157.77ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."messages"."id" FROM "public"."messages" WHERE "public"."messages"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."messages"."id", "public"."messages"."userId", "public"."messages"."subject", "public"."messages"."content", "public"."messages"."messageType", "public"."messages"."status"::text, "public"."messages"."scheduledAt", "public"."messages"."sentAt", "public"."messages"."totalRecipients", "public"."messages"."successCount", "public"."messages"."failedCount", "public"."messages"."cost", "public"."messages"."templateId", "public"."messages"."templateVariables", "public"."messages"."createdAt", "public"."messages"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_recipients", 0) AS "_aggr_count_recipients" FROM "public"."messages" LEFT JOIN (SELECT "public"."message_recipients"."messageId", COUNT(*) AS "_aggr_count_recipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."messageId") AS "aggr_selection_0_MessageRecipient" ON ("public"."messages"."id" = "aggr_selection_0_MessageRecipient"."messageId") WHERE "public"."messages"."userId" = $1 ORDER BY "public"."messages"."createdAt" DESC LIMIT $2 OFFSET $3
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT 1
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+🐌 Slow request: GET /?limit=50 took 1652.04ms
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+🌐 CORS request from origin: http://localhost:5173
+🔍 Allowed origins: [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://your-app.vercel.app'
+]
+prisma:query SELECT "public"."users"."id", "public"."users"."email", "public"."users"."password", "public"."users"."firstName", "public"."users"."lastName", "public"."users"."phone", "public"."users"."isVerified", "public"."users"."emailVerifiedAt", "public"."users"."passwordResetToken", "public"."users"."passwordResetExpires", "public"."users"."createdAt", "public"."users"."updatedAt" FROM "public"."users" WHERE ("public"."users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."contacts"."id", "public"."contacts"."userId", "public"."contacts"."name", "public"."contacts"."phone", "public"."contacts"."email", "public"."contacts"."notes", "public"."contacts"."tags", "public"."contacts"."customFields", "public"."contacts"."createdAt", "public"."contacts"."updatedAt", COALESCE("aggr_selection_0_MessageRecipient"."_aggr_count_messageRecipients", 0) AS "_aggr_count_messageRecipients" FROM "public"."contacts" LEFT JOIN (SELECT "public"."message_recipients"."contactId", COUNT(*) AS "_aggr_count_messageRecipients" FROM "public"."message_recipients" WHERE 1=1 GROUP BY "public"."message_recipients"."contactId") AS "aggr_selection_0_MessageRecipient" ON ("public"."contacts"."id" = "aggr_selection_0_MessageRecipient"."contactId") WHERE "public"."contacts"."userId" = $1 ORDER BY "public"."contacts"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."notes" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND "public"."contacts"."email" IS NOT NULL) OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE "public"."contacts"."userId" = $1 OFFSET $2) AS "sub"
+prisma:query SELECT COUNT(*) AS "_count._all" FROM (SELECT "public"."contacts"."id" FROM "public"."contacts" WHERE ("public"."contacts"."userId" = $1 AND EXISTS(SELECT "t0"."contactId" FROM "public"."contact_group_contacts" AS "t0" WHERE (1=1 AND ("public"."contacts"."id") = ("t0"."contactId") AND "t0"."contactId" IS NOT NULL))) OFFSET $2) AS "sub"
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }

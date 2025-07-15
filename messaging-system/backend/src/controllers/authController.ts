@@ -156,8 +156,10 @@ export const authController = {
         });
       }
 
+      const { password, passwordResetToken, passwordResetExpires, ...userWithoutSensitiveData } = req.user;
+      
       return res.status(200).json({
-        user: req.user,
+        user: userWithoutSensitiveData,
       });
     } catch (error: any) {
       return res.status(500).json({

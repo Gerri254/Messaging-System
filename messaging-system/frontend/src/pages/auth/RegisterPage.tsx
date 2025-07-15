@@ -64,9 +64,11 @@ const RegisterPage = () => {
   const passwordStrength = password ? getPasswordStrength(password) : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+    <div className="min-h-screen bg-gradient-auth relative overflow-hidden flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-mesh-modern"></div>
+      <div className="absolute inset-0 bg-animated-grid opacity-20"></div>
+      <div className="absolute inset-0 floating-elements"></div>
       
       <div className="max-w-md w-full space-y-8 relative">
         {/* Header */}
@@ -81,10 +83,10 @@ const RegisterPage = () => {
               <Zap className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">
+          <h2 className="mt-6 text-3xl font-bold text-white drop-shadow-lg">
             Create your account
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-white/90 drop-shadow">
             Join MessageHub and start sending SMS campaigns
           </p>
         </motion.div>
@@ -95,7 +97,7 @@ const RegisterPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Card variant="glass" className="bg-white bg-opacity-95">
+          <Card variant="glass" className="glass-card">
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-2 gap-4">
                 <Input

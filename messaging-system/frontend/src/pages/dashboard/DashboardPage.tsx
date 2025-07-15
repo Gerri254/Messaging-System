@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   Users, 
   MessageSquare, 
@@ -15,6 +16,8 @@ import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 
 const DashboardPage = () => {
+  const navigate = useNavigate();
+
   // Mock data - will be replaced with real API data
   const stats = [
     {
@@ -110,7 +113,7 @@ const DashboardPage = () => {
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           <p className="text-gray-600 mt-1">Welcome back! Here's your messaging overview.</p>
         </div>
-        <Button leftIcon={<Send className="w-4 h-4" />}>
+        <Button leftIcon={<Send className="w-4 h-4" />} onClick={() => navigate('/messages/send')}>
           Send Message
         </Button>
       </motion.div>
@@ -166,7 +169,7 @@ const DashboardPage = () => {
           <Card>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-semibold text-gray-900">Recent Messages</h3>
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" onClick={() => navigate('/messages')}>
                 View all
               </Button>
             </div>
@@ -212,19 +215,19 @@ const DashboardPage = () => {
           <Card>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Quick Actions</h3>
             <div className="space-y-4">
-              <Button className="w-full justify-start" variant="secondary">
+              <Button className="w-full justify-start" variant="secondary" onClick={() => navigate('/messages/send')}>
                 <Send className="w-4 h-4 mr-3" />
                 Send New Message
               </Button>
-              <Button className="w-full justify-start" variant="secondary">
+              <Button className="w-full justify-start" variant="secondary" onClick={() => navigate('/contacts')}>
                 <Users className="w-4 h-4 mr-3" />
                 Import Contacts
               </Button>
-              <Button className="w-full justify-start" variant="secondary">
+              <Button className="w-full justify-start" variant="secondary" onClick={() => navigate('/templates')}>
                 <MessageSquare className="w-4 h-4 mr-3" />
                 Create Template
               </Button>
-              <Button className="w-full justify-start" variant="secondary">
+              <Button className="w-full justify-start" variant="secondary" onClick={() => navigate('/analytics')}>
                 <TrendingUp className="w-4 h-4 mr-3" />
                 View Analytics
               </Button>

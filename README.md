@@ -1,4 +1,4 @@
-# 🚀 Client-Server Messaging System
+# 🚀 Client-Server Messaging Syste
 
 A comprehensive, enterprise-grade messaging system featuring real-time communication, SMS integration, contact management, and advanced analytics. Built with modern web technologies for scalability and performance.
 
